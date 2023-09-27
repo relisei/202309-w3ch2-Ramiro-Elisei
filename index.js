@@ -1,12 +1,14 @@
-let suits = ["♥", "♦", "♣", "♠"];
-let numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+const cardSuits = ["♥", "♦", "♣", "♠"];
+const cardValues = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 
-const generateCardOfDecks = (suits, numbers) => {
-  let cardOfDecks = [];
-  suits.forEach((suit) => {
-    numbers.forEach((number, index) => {
-      cardOfDecks.push({ suit: suit, number: number, value: index });
+const generateDeck = () => {
+  const deckCards = [];
+
+  cardSuits.forEach((suit) => {
+    cardValues.forEach((value, position) => {
+      deckCards.push({ suit: suit, number: value, score: position });
     });
   });
-  console.log(cardOfDecks);
+
+  return deckCards;
 };
