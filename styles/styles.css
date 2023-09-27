@@ -5,23 +5,12 @@
 }
 
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1 {
   margin: 0;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+button {
+  border: none;
+  font: inherit;
+  background-color: inherit;
 }
