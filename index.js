@@ -12,3 +12,8 @@ const generateDeck = () => {
 
   return deckCards;
 };
+
+const getRandomCard = () =>
+  generateDeck()[Math.floor(Math.random() * generateDeck.length)];
+
+getRandomCard();
