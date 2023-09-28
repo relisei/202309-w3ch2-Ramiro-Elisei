@@ -9,6 +9,7 @@
 ::after,
 ::before {
   box-sizing: border-box;
+  font-family: var(--main-font);
 }
 
 body,
@@ -28,7 +29,12 @@ button {
 }
 
 .main-container {
-  font-family: var(--main-font);
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.mask-container {
+  height: 100px;
   padding: 20px 40px;
   text-align: center;
 }
@@ -79,6 +85,13 @@ button {
   transform: translate(-50%, -50%);
 }
 
+.center-element-user {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .suit-bottom {
   position: absolute;
   bottom: 15px;
@@ -97,8 +110,12 @@ button {
   font-size: 45px;
 }
 
+.show-message {
+  padding: 20px;
+}
+
 .bottom-container {
-  padding: 40px 0;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
 }
@@ -119,4 +136,8 @@ button:last-of-type {
 
 button:hover {
   color: var(--red-color);
+}
+
+.start-button {
+  margin-top: 60px;
 }

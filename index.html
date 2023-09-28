@@ -7,10 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;500;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Greater or Smaller">
+  <meta name="Greater or Smaller" content="Un juego de cartas para adivinar cual es mayor o menor">
   <title>Greater or Smaller</title>
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./styles/styles.css">
+  <script defer src="./js/index.js"></script>
 </head>
 
 <body>
@@ -19,27 +20,41 @@
       <h1>Greater or Smaller?</h1>
     </header>
     <main>
-      <div class="cards-container">
-        <div class="card">
+      <div class="start-button-container">
+        <button class="button start-button">Start!</button>
+      </div>
+      <div class="cards-container hidden">
+        <div class="card card-left">
           <div class="suit-element suit-top">
-            <span>A</span>
-            <span>♣️</span>
+            <span class="value-corner-left"></span>
+            <span class="suit-corner-left"></span>
           </div>
-          <span class="suit-middle-element center-element">♣️</span>
+          <span class="suit-middle-element center-element"></span>
           <div class="suit-element suit-bottom">
-            <span>A</span>
-            <span>♣️</span>
+            <span class="value-corner-left"></span>
+            <span class="suit-corner-left"></span>
           </div>
         </div>
-        <div class="card">
+        <div class="card card-mask">
           <span class="guess-element center-element">?</span>
+        </div>
+        <div class="card card-right hidden">
+          <div class="suit-element suit-top">
+            <span class="value-corner-right"></span>
+            <span class="suit-corner-right"></span>
+          </div>
+          <span class="suit-middle-element-user center-element"></span>
+          <div class="suit-element suit-bottom">
+            <span class="value-corner-right"></span>
+            <span class="suit-corner-right"></span>
+          </div>
         </div>
       </div>
     </main>
     <div class="bottom-container">
-      <span class="hidden visible">Greater!</span>
-      <button class="button">Greater</button>
-      <button class="button">Smaller</button>
+      <span class="show-message"></span>
+      <button class="button greater-button hidden">Greater</button>
+      <button class="button smaller-button hidden">Smaller</button>
     </div>
   </div>
 </body>
