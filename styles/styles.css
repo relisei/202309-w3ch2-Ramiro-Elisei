@@ -79,7 +79,7 @@ button {
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 85px;
+  font-size: 150px;
 }
 
 .center-element-user {
@@ -87,7 +87,7 @@ button {
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 85px;
+  font-size: 150px;
 }
 
 .suit-bottom {
@@ -105,6 +105,7 @@ button {
 
 .show-message {
   padding: 20px;
+  font-size: 30px;
 }
 
 .bottom-container {
