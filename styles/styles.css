@@ -60,10 +60,6 @@ button {
   font-size: 20px;
 }
 
-.suit-middle-element {
-  font-size: 85px;
-}
-
 .guess-element {
   font-size: 142px;
   font-weight: 500;
@@ -83,6 +79,7 @@ button {
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 85px;
 }
 
 .center-element-user {
@@ -90,6 +87,7 @@ button {
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 85px;
 }
 
 .suit-bottom {
@@ -103,11 +101,6 @@ button {
 
 .hidden {
   display: none;
-}
-
-.visible {
-  padding: 28px 0;
-  font-size: 45px;
 }
 
 .show-message {
@@ -138,6 +131,7 @@ button:hover {
   color: var(--red-color);
 }
 
-.start-button {
-  margin-top: 60px;
+.start-button-container {
+  position: relative;
+  top: 150px;
 }
