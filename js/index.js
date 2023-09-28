@@ -8,6 +8,7 @@ const messageInput = document.querySelector(".result-message");
 const buttonGreater = document.querySelector(".greater-button");
 const buttonSmaller = document.querySelector(".smaller-button");
 const buttonStarter = document.querySelector(".start-button");
+const buttonStartContainer = document.querySelector(".start-button-container");
 const cardsContainer = document.querySelector(".cards-container");
 const cardMask = document.querySelector(".card-mask");
 const cardRight = document.querySelector(".card-right");
@@ -28,7 +29,7 @@ const getRandomCard = () =>
 
 const showGameLeftCard = () => {
   let card = getRandomCard();
-  debugger;
+
   const cornerValue = document.querySelectorAll(".value-corner-left");
   cornerValue.forEach((nodo) => {
     nodo.textContent = card.value;
@@ -43,7 +44,7 @@ const showGameLeftCard = () => {
 
 const showGameRightCard = () => {
   let card = getRandomCard();
-  debugger;
+
   const cornerValue = document.querySelectorAll(".value-corner-right");
   cornerValue.forEach((nodo) => {
     nodo.textContent = card.value;
@@ -56,8 +57,6 @@ const showGameRightCard = () => {
   centerSuit.textContent = card.suit;
 };
 
-// showGameLeftRight(playerCard);
-
 const checkHandResult = (card) => {
   return card.score > playerCard.score ? "greater" : "smaller";
 };
@@ -67,6 +66,7 @@ const revealGameResult = (sentencia) => {
     const cornerValue = document.querySelector(".show-message");
     cornerValue.textContent = "Greater! 😄";
   }
+
   if (sentencia === "smaller") {
     const cornerValue = document.querySelector(".show-message");
     cornerValue.textContent = "Smaller! 🤣";
@@ -74,7 +74,6 @@ const revealGameResult = (sentencia) => {
 };
 
 buttonStarter.addEventListener("click", () => {
-  debugger;
   gameCard = getRandomCard();
   playerCard = getRandomCard();
   showGameLeftCard();
@@ -83,17 +82,16 @@ buttonStarter.addEventListener("click", () => {
   buttonGreater.classList.remove("hidden");
   buttonSmaller.classList.remove("hidden");
   buttonStarter.classList.add("hidden");
+  buttonStarter.classList.add("hidden");
 });
 
 buttonGreater.addEventListener("click", () => {
-  debugger;
   cardMask.classList.add("hidden");
   cardRight.classList.remove("hidden");
   revealGameResult(checkHandResult(playerCard));
 });
 
 buttonSmaller.addEventListener("click", () => {
-  debugger;
   cardMask.classList.add("hidden");
   cardRight.classList.remove("hidden");
   revealGameResult(checkHandResult(playerCard));
