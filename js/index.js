@@ -21,6 +21,7 @@ const generateDeck = () => {
       deckCards.push({ suit: cardSuit, value: cardValue, score: position });
     });
   });
+
   return deckCards;
 };
 
@@ -34,10 +35,12 @@ const showGameLeftCard = () => {
   cornerValue.forEach((nodo) => {
     nodo.textContent = card.value;
   });
+
   const cornerSuit = document.querySelectorAll(".suit-corner-left");
   cornerSuit.forEach((nodo) => {
     nodo.textContent = card.suit;
   });
+
   const centerSuit = document.querySelector(".suit-middle-element-left");
   centerSuit.textContent = card.suit;
 };
@@ -49,27 +52,29 @@ const showGameRightCard = () => {
   cornerValue.forEach((nodo) => {
     nodo.textContent = card.value;
   });
+
   const cornerSuit = document.querySelectorAll(".suit-corner-right");
   cornerSuit.forEach((nodo) => {
     nodo.textContent = card.suit;
   });
+
   const centerSuit = document.querySelector(".suit-middle-element-right");
   centerSuit.textContent = card.suit;
 };
 
-const compareHandResult = (card) => {
-  return card.score > playerCard.score ? "greater" : "smaller";
+const compareHandResult = () => {
+  return playerCard.score > gameCard.score ? true : false;
 };
 
-const revealGameResult = (sentencia) => {
-  if (sentencia === "greater") {
+const revealGameResult = (resultGame) => {
+  if (resultGame === true) {
     const cornerValue = document.querySelector(".show-message");
-    cornerValue.textContent = "Greater! 😄";
+    cornerValue.textContent = "Has ganado!";
   }
 
-  if (sentencia === "smaller") {
+  if (resultGame === false) {
     const cornerValue = document.querySelector(".show-message");
-    cornerValue.textContent = "Smaller! 🤣";
+    cornerValue.textContent = "Has perdido!";
   }
 };
 
@@ -85,14 +90,32 @@ buttonStarter.addEventListener("click", () => {
   buttonStarter.classList.add("hidden");
 });
 
-buttonGreater.addEventListener("click", () => {
+buttonGreater.addEventListener("click", (event) => {
+  event.stopPropagation();
+
   cardMask.classList.add("hidden");
   cardRight.classList.remove("hidden");
-  revealGameResult(compareHandResult(playerCard));
+
+  if (compareHandResult()) {
+    revealGameResult(true);
+    console.log("ganado");
+  } else if (!compareHandResult()) {
+    revealGameResult(false);
+    console.log("perdido");
+  }
 });
 
-buttonSmaller.addEventListener("click", () => {
+buttonSmaller.addEventListener("click", (event) => {
+  event.stopPropagation();
+
   cardMask.classList.add("hidden");
   cardRight.classList.remove("hidden");
-  revealGameResult(compareHandResult(playerCard));
+
+  if (compareHandResult()) {
+    revealGameResult(true);
+    console.log("ganado");
+  } else if (!compareHandResult()) {
+    revealGameResult(false);
+    console.log("perdido");
+  }
 });
