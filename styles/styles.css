@@ -9,6 +9,9 @@
 ::after,
 ::before {
   box-sizing: border-box;
+}
+
+html {
   font-family: var(--main-font);
 }
 
@@ -29,12 +32,6 @@ button {
 }
 
 .main-container {
-  padding: 20px 40px;
-  text-align: center;
-}
-
-.mask-container {
-  height: 100px;
   padding: 20px 40px;
   text-align: center;
 }
@@ -104,7 +101,7 @@ button {
 }
 
 .show-message {
-  padding: 20px;
+  height: 50px;
   font-size: 30px;
 }
 
@@ -124,15 +121,16 @@ button {
   cursor: pointer;
 }
 
+.start-button-container .start-button {
+  margin-top: 150px;
+  padding: 20px;
+  font-size: 30px;
+}
+
 button:last-of-type {
   margin-top: 12px;
 }
 
 button:hover {
   color: var(--red-color);
-}
-
-.start-button-container {
-  position: relative;
-  top: 150px;
 }

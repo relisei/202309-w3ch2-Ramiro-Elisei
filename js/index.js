@@ -38,7 +38,7 @@ const showGameLeftCard = () => {
   cornerSuit.forEach((nodo) => {
     nodo.textContent = card.suit;
   });
-  const centerSuit = document.querySelector(".suit-middle-element");
+  const centerSuit = document.querySelector(".suit-middle-element-left");
   centerSuit.textContent = card.suit;
 };
 
@@ -53,11 +53,11 @@ const showGameRightCard = () => {
   cornerSuit.forEach((nodo) => {
     nodo.textContent = card.suit;
   });
-  const centerSuit = document.querySelector(".suit-middle-element-user");
+  const centerSuit = document.querySelector(".suit-middle-element-right");
   centerSuit.textContent = card.suit;
 };
 
-const checkHandResult = (card) => {
+const compareHandResult = (card) => {
   return card.score > playerCard.score ? "greater" : "smaller";
 };
 
@@ -88,11 +88,11 @@ buttonStarter.addEventListener("click", () => {
 buttonGreater.addEventListener("click", () => {
   cardMask.classList.add("hidden");
   cardRight.classList.remove("hidden");
-  revealGameResult(checkHandResult(playerCard));
+  revealGameResult(compareHandResult(playerCard));
 });
 
 buttonSmaller.addEventListener("click", () => {
   cardMask.classList.add("hidden");
   cardRight.classList.remove("hidden");
-  revealGameResult(checkHandResult(playerCard));
+  revealGameResult(compareHandResult(playerCard));
 });
